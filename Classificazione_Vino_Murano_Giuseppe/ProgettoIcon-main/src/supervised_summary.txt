@@ -1,0 +1,13 @@
+SUPERVISED LEARNING - RIEPILOGO
+====================================================================================================
+
+Algoritmo                      Test F1      Test Acc     Gap          MCC         
+------------------------------------------------------------------------------------------
+KNN                            0.7465       0.7487       0.0844       0.4514      
+Decision Tree                  0.7445       0.7426       0.0356       0.4562      
+Random Forest (Optimized)      0.8061       0.8082       0.0841       0.5807      
+Gradient Boosting              0.7884       0.7908       0.0327       0.5422      
+SVM                            0.7777       0.7744       0.0341       0.5404      
+
+MIGLIOR MODELLO: Random Forest (Optimized)
+Test F1-Score: 0.8061

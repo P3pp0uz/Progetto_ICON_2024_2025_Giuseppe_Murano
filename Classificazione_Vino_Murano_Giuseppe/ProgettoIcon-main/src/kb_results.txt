@@ -1,0 +1,13 @@
+KNOWLEDGE BASE - RISULTATI
+====================================================================================================
+
+Accuracy:  0.6595
+Precision: 0.7062
+Recall:    0.7909
+F1-Score:  0.7462
+Coverage:  71.7%
+
+CONFRONTO KB vs Random Forest (Optimized)
+ML F1:     0.8061
+KB F1:     0.7462
+ΔF1:       +0.0599
