@@ -67,7 +67,7 @@ def optimize_random_forest(X_train, y_train):
     print("Training Random Forest con RandomizedSearchCV...")
     random_search.fit(X_train, y_train)
 
-    print(f"\n✓ Ottimizzazione completata!")
+    print(f"\n Ottimizzazione completata!")
     print(f"Best CV F1-Score: {random_search.best_score_:.4f}")
     print(f"Best hyperparameters:")
     for param, value in random_search.best_params_.items():

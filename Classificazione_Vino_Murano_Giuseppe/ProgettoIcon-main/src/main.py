@@ -204,7 +204,7 @@ def main():
     print("=" * 100)
 
     mlp_results = neural_networks_pipeline(X, y)
-    print(f"\n[MLP] ✓ Training completato")
+    print(f"\n[MLP] Training completato")
     print(f"  Test F1-Score: {mlp_results['test_f1']:.4f}")
     print(f"  Test Accuracy: {mlp_results['test_accuracy']:.4f}")
     print(f"  Overfitting Gap: {mlp_results['overfitting_gap']:.4f}")
@@ -219,14 +219,14 @@ def main():
 
     try:
         prob_results = probabilistic_models_pipeline(X, y)
-        print(f"\n[PROB] ✓ Training completato")
+        print(f"\n[PROB] Training completato")
 
         # Visualizza e salva risultati su PNG
         if prob_results:
             viz = UnifiedVisualizer()
             viz.plot_probabilistic_results(prob_results,
                                            output_path='visualization/probabilistic_results.png')
-            print(f"[VIZ] ✓ Risultati salvati in 'visualization/probabilistic_results.png'")
+            print(f"[VIZ] Risultati salvati in 'visualization/probabilistic_results.png'")
 
     except Exception as e:
         print(f"[WARNING] Modelli probabilistici saltati: {e}")
@@ -243,7 +243,7 @@ def main():
     try:
         # Inizializza KB
         kb = WineQualityKB()
-        print(f"\n[KB] ✓ Knowledge Base inizializzata")
+        print(f"\n[KB]Knowledge Base inizializzata")
         print(f"  Numero di regole: {len(kb.rules)}")
         print(f"  Regole caricate:")
         for rule in kb.rules:
@@ -265,7 +265,7 @@ def main():
 
         kb_results = evaluate_kb_on_dataset(kb, feature_dict_list, y_test)
 
-        print(f"\n[KB] ✓ Valutazione completata su {len(y_test)} campioni")
+        print(f"\n[KB] Valutazione completata su {len(y_test)} campioni")
         print(f"  KB Accuracy: {kb_results['kb_accuracy']:.4f}")
         print(f"  KB Precision: {kb_results['kb_precision']:.4f}")
         print(f"  KB Recall: {kb_results['kb_recall']:.4f}")
@@ -291,11 +291,11 @@ def main():
         print(f"\nΔF1 (ML - KB): {delta_f1:+.4f}")
 
         if delta_f1 > 0:
-            print(f"✓ ML migliore della KB di {delta_f1:.1%}")
+            print(f"ML migliore della KB di {delta_f1:.1%}")
         elif delta_f1 < -0.05:
-            print(f"✓ KB COMPETITIVA! Migliore di ML di {abs(delta_f1):.1%}")
+            print(f"KB COMPETITIVA! Migliore di ML di {abs(delta_f1):.1%}")
         else:
-            print(f"✓ KB E ML COMPARABILI (differenza < 0.5%)")
+            print(f"KB E ML COMPARABILI (differenza < 0.5%)")
 
         # Salva risultati KB
         with open('kb_results.txt', 'w', encoding='utf-8') as f:
@@ -333,7 +333,7 @@ def main():
     except Exception as e:
         print(f"[WARN] Visualizzazioni non generate: {e}")
 
-    print("\n Pipeline completa! ✓")
+    print("\n Pipeline completa!")
 
 
 if __name__ == "__main__":
